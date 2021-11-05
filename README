@@ -1,0 +1,20 @@
+README
+NLP Homework2
+Kate Harwood
+krh2154
+
+For my first extension, I implemented custom learning rate scheduling. I first implemented a simple learning rate scheduler, based off of how pytorch's built in learning rate scheduler is implemented. Then I implemented a more involved learning rate scheduler, based off of one of the explanations of learning rate scheduling in this paper: https://www.mdpi.com/2073-8994/12/4/660/pdf
+
+I chose the exponential step method from this paper. I implemented these schedulers in a separate train function in hw2.py (called train_model_with_learning_rate_scheduler). Learning rate scheduling should improve performance because, while having a larger learning rate at the beginning of training helps to avoid potential local minima, as we get closer to the minimum of the objective function, the slope usually gets less steep, and we should be making smaller updates to our weights so we don't overshoot the minimum. 
+
+This can be run by passing "extension1" as the model. The learning rate scheduler can be changed on line 63 of hw2.py (currently: scheduler_type = "exponential_based") if the grader wants to try the "simple" learning rate scheduler instead.
+
+
+
+
+For my second extension, I implemented a convolutional network. The network has a 1 dimension convolutional layer to fit the text sequences as well as a dropout layer to avoid overfitting. This extension is in models.py and is named ExperimentalNetwork2. A CNN could have a slight advantage over the RNN, since RNNs are better suited to predicting the next part of a sequence, while CNNs function by creating feature maps for salient portions of the text, which helps in a classification task.
+
+This can be run just by passing "extension2" as the model.
+
+
+I ran everything in a virtual environment running python3.6.
